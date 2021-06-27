@@ -1,0 +1,80 @@
+<%- include("partials/header") -%>
+
+  <body>
+
+   <!-- Navigation Bar and title -->
+    <section id="title">
+      <div class="container-fluid">
+
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark " style="padding:0px 6px ;">
+
+          <a class="navbar-brand " href="#"><img src="/Images/CG.jpg" style="padding-right:10px; padding-top:5px;" width="45" height="35" class="d-inline-block align-top" alt="">C-Guide</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+               <ul class="navbar-nav mx-auto">
+                  <li class="nav-item active mx-2">
+                    <a class="nav-link" href="/first">Home <span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="">Notification</a>
+                  </li>
+
+                  <li class="nav-item mx-2">
+                    <a class="nav-link " href="/about">About Us</a>
+                  </li>
+
+                  <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/profile">‍<img class="ico" style="height:18px;width:18px;" src="/Images/user.png" alt=""><%= fname %> <%= lname%></a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">💬 Messages</a>
+                      <a class="dropdown-item" href="/content"><img class="ico" src="/Images/content.png" alt="">Your Content</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#"><img class="ico" src="/Images/ask.png" alt=""> Help</a>
+                      <a class="dropdown-item" href="/logout"><img class="ico" src="/Images/logout.png" alt="">Logout</a>
+                    </div>
+                  </li>
+
+               </ul>
+
+
+               <!-- Search Bar -->
+               <form class="form-inline my-2 my-lg-0"  action="/first" method="post">
+                 <input class="form-control mr-sm-2" type="search" placeholder="Ask your Question" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Ask</button>
+               </form>
+
+         </div>
+         </div>
+      </nav>
+
+<section id="question_bar" class="ask-section">
+  <h1 style="text-align:center; padding-top:0.5%; padding-bottom:1%; color: #34568B;">Ask Question</h1>
+
+  <form class="" action="/askquestion" method="post">
+   <div class="for_border">
+
+     <div class="form-group">
+           <label for="FormControlTextarea1"><img class="user_image" src="<%= imageLink %>" alt=""><%= fname %> <%= lname %></label>
+           <textarea text="text" class="form-control" name="question" id="FormControlTextarea1" rows="4"  placeholder="What is your Question ?"></textarea>
+     </div>
+
+   <button type="submit" class="btn btn-primary">Post</button>
+   <button type="submit" class="btn btn-light">cancel</button>
+
+   </div>
+
+  </form>
+
+</section>
+
+<%- include("partials/footer1") -%>

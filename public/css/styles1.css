@@ -1,0 +1,163 @@
+/* learn about Selectors in CSS  */
+body
+{
+  font-family: 'Libre Franklin', sans-serif;
+  background-color:#f6f5f5;
+}
+h1
+{
+  padding-top: 7%;
+  padding-bottom:4%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  line-height: 1.5;
+}
+h3
+{
+  padding-bottom:15%;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #dbf6e9
+}
+.container-fluid
+{
+  padding:3% 12%;
+  padding-bottom: 0%;
+}
+/* Navigation bar */
+.navbar-brand
+{
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.user_image
+{
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  border-radius: 100%;
+}
+.btn
+{
+  margin-right: 5px;
+  margin-top: 12px;
+}
+.for_border
+{
+  border-style: outset;
+  padding: 25px;
+  background-color: #fff;
+
+}
+.like_share_img
+{
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+.posts
+{
+  margin-top:60px;
+  margin-bottom: 60px;
+}
+.social_icon
+{
+  margin: 20px 10px;
+}
+.card-subtitle
+{
+  font-size: 0.8rem;
+}
+.social_network
+{
+  color:white;
+}
+.ico
+{
+  height:15px;
+  width:15px;
+  margin-right:8px;
+}
+
+.v:hover {
+  color:#231E23;
+  background-color: #1597bb;
+}
+.Content
+{
+  background-color: #f6f5f5;
+}
+
+
+#title
+{
+  background-color: #1597bb;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+
+}
+/* Question Bar */
+#question_bar
+{
+  padding: 5% 15%;
+}
+
+#Post
+{
+  padding: 1% 15%;
+}
+
+
+#Footer
+{
+  background-color:#1597bb;
+  padding-bottom: 2%;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+  padding-bottom:0px;
+  text-align: center;
+  margin-top: 3%;
+	background-color: #1597bb;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  color: #34568B;
+  background-color:#f6f5f5;
+}
+.post-section
+{
+  color:black;
+  background-color:#f6f5f5;
+}
+
+.ask-section
+{
+  background-color:#f6f5f5;
+  color:black;
+}
+.HOVER:hover
+{
+  color:grey;
+  background-color: yellow;
+}
+
+/* Media Query */
+@media (max-width:985px) {
+  .tag_lines
+  {
+    text-align: center;
+  }
+
+}

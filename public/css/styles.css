@@ -1,0 +1,23 @@
+
+body {
+  background-color: #CCF2F4;
+}
+
+img
+{
+  height: 75px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.centered {
+    padding-top: 150px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}

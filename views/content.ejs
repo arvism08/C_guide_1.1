@@ -1,0 +1,145 @@
+<%- include("partials/header") -%>
+
+  <body>
+
+   <!-- Navigation Bar and title -->
+    <section id="title">
+      <div class="container-fluid">
+
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark " style="padding:0px 6px ;">
+
+          <a class="navbar-brand " href="#"><img src="/Images/CG.jpg" style="padding-right:10px; padding-top:5px;" width="45" height="35" class="d-inline-block align-top" alt="">C-Guide</a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+               <ul class="navbar-nav mx-auto">
+                  <li class="nav-item active mx-2">
+                    <a class="nav-link" href="/first">Home <span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="">Notification</a>
+                  </li>
+
+                  <li class="nav-item mx-2">
+                    <a class="nav-link " href="/about">About Us</a>
+                  </li>
+
+                  <li class="nav-item dropdown mx-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/profile">‍<img class="ico" style="height:18px;width:18px;" src="/Images/user.png" alt=""><%= fname %> <%= lname%></a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">💬 Messages</a>
+                      <a class="dropdown-item" href="/content"><img class="ico" src="/Images/content.png" alt="">Your Content</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#"><img class="ico" src="/Images/ask.png" alt=""> Help</a>
+                      <a class="dropdown-item" href="/logout"><img class="ico" src="/Images/logout.png" alt="">Logout</a>
+                    </div>
+                  </li>
+
+               </ul>
+
+
+               <!-- Search Bar -->
+               <form class="form-inline my-2 my-lg-0"  action="/first" method="post">
+                 <input class="form-control mr-sm-2" type="search" placeholder="Ask your Question" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Ask</button>
+               </form>
+
+         </div>
+         </div>
+      </nav>
+
+      <div class="card-header" style="padding-bottom:20px;padding-top:35px;text-align:center;font-size:1.6rem">
+          Your Questions........
+      </div>
+
+
+</section>
+
+<section id="Post">
+
+     <% for(var i=0;i<posts.length;i++){ %>
+
+
+     <div class="card border-dark mb-3 posts">
+
+       <div class="card-header">
+           <h5 class="card-title"><img class="user_image" src="<%= posts[i].profile %>" alt=""><%= posts[i].userName %></h5>
+           <h6 class="card-subtitle mb-2 text-muted"><span>Shared publicly</span> - <span> <%= posts[i].date %></span></h6>
+       </div>
+
+       <div class="card-body">
+           <p class="card-text">
+              <%= posts[i].question.substring(0,100) + "..." %>
+              <a class="HOVER" style="color:#0000FF" href="/posts/<%= posts[i].postNumber %>"><u>full feed</u></a>
+           </p>
+       </div>
+
+       <div class="card-footer" style="padding:3px 5px;">
+         <div class="" style="position:absolute; right:20px;">
+           <button class="btn btn-light" type="button" name="button" style="display: inline-block"><img class="like_share_img" src="/Images/like.png" alt=""></button>
+           <!-- AddToAny BEGIN -->
+           <a class="a2a_dd" href="https://www.addtoany.com/share"> <button class="btn btn-light" type="button" name="button" style="display: inline-block"><img class="like_share_img" src="/Images/share.png" alt=""></button></a>
+           <script async src="https://static.addtoany.com/menu/page.js"></script>
+           <!-- AddToAny END -->
+
+          <a href="/posts/<%= posts[i].postNumber %>" > <button class="btn btn-light" type="button" name="button" style="display: inline-block"><img class="like_share_img" src="/Images/speech-bubble.png" alt=""></button></a>
+         </div>
+         <!-- Comment button and box -->
+         <!-- Button trigger modal -->
+            <form class="" action="/getPostNo" method="post">
+           <button type="submit" class="btn btn-primary comment_bt" data-toggle="modal" data-target="#commentmodal" >
+             Comment
+           </button>
+           <input type="hidden" name="p_no" value="<%= i %>"></input>
+         </form>
+
+           <!-- Modal -->
+           <form class="" action="/comment" method="post">
+             <div class="modal fade" id="commentmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered" role="document">
+
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLongTitle"> <%= fname %> <%= lname %></h5>
+                      <!-- findout below line ???????????? -->
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div>
+
+                   <div class="modal-body">
+                     <textarea name="comment_box" onfocus="this.value=''"  rows="4" cols="45" placeholder="Answer the question"></textarea>
+                   </div>
+
+                   <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                     <button type="submit" class="btn btn-success">Comment</button>
+                   </div>
+                 </div>
+
+               </div>
+
+             </div>
+
+           </form>
+
+
+       </div>
+     </div>
+     <% } %>
+
+   </section>
+
+
+
+
+<%- include("partials/footer") -%>
